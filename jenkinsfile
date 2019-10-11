@@ -2,6 +2,15 @@ pipeline {
     agent any
 
     stages {
+        stage("clone code") {
+            steps {
+                script {
+                    // Let's clone the source
+                    git 'https://github.com/amineBoujnah/CICD';
+                }
+            }
+        }
+    stages {
         stage('Build') {
             steps {
                 mvn clean install
