@@ -42,6 +42,14 @@ pipeline {
                 }
             }
         }
+            stage('Email')
+        {
+            env.ForEmailPlugin = env.WORKSPACE      
+            emailext attachmentsPattern: 'TestResults\\*.trx',      
+            body: 'Finished', 
+            subject: currentBuild.currentResult + " : " + env.JOB_NAME, 
+            to: 'boujnahamine1@gmail.com'
+        }
          stage("mvn deploy") {
             steps {
                 script {
@@ -51,14 +59,7 @@ pipeline {
                 }
             }
         }
-        stage('Email')
-        {
-            env.ForEmailPlugin = env.WORKSPACE      
-            emailext attachmentsPattern: 'TestResults\\*.trx',      
-            body: 'Finished', 
-            subject: currentBuild.currentResult + " : " + env.JOB_NAME, 
-            to: 'boujnahamine1@gmail.com'
-        }
+    
         
         
        
