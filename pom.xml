@@ -34,7 +34,7 @@
 		<repository>
 			<id>releases</id>
 			<name>releases</name>
-			<url>http://102.104.60.19:8081/nexus/content/repositories/releases/</url>
+			<url>http://localhost:8081/nexus/content/repositories/releases/</url>
 		</repository>
 	</distributionManagement>
 
