@@ -62,7 +62,7 @@ pipeline {
                     mail bcc: '',
                     body: 'Hello the build is successful !! ',
                     cc: '',
-                    from: 'boujnahamine1@gmail.com',
+                    from: '',
                     replyTo: '',
                     subject: 'Build Finished',
                     to: 'boujnahamine1@gmail.com'
