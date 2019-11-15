@@ -51,11 +51,10 @@ pipeline {
                 }
             }
         }
+        stage("Email notification") {
+            mail bcc: '', body: '''Hey Admin it\'s just email alert to inform you that your build is finish.Thanks. Jenkins.''', cc: '', from: '', replyTo: '', subject: 'Jenkins pipeline build', to: 'boujnahamine1@gmail.com'
+        }
         
-        stage("Email notification"){
-        mail bcc: '', body: '''Hey Admin it\'s just email alert to inform you that your build is finish.
-Thanks.
-Jenkins.''', cc: '', from: '', replyTo: '', subject: 'Jenkins pipeline build', to: 'boujnahamine1@gmail.com'
-}
+       
 }
 }
