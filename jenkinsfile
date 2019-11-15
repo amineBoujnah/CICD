@@ -43,17 +43,7 @@ pipeline {
             }
         }
         
-         stage("Mail") {
-            steps {
-                script {
-                    env.ForEmailPlugin = env.WORKSPACE      
-                    emailext attachmentsPattern: 'TestResults\\*.trx',      
-                    body: 'Finished', 
-                    subject: currentBuild.currentResult + " : " + env.JOB_NAME, 
-                    to: 'boujnahamine1@gmail.com'
-                }
-            }
-        }
+     
         
         
            
@@ -66,8 +56,19 @@ pipeline {
                 }
             }
         }
-    
-        
+        stage("Mail") {
+            steps {
+                script {
+                    mail bcc: '',
+                    body: 'Hello the build is successful !! ',
+                    cc: '',
+                    from: 'boujnahamine1@gmail.com',
+                    replyTo: '',
+                    subject: 'Build Finished',
+                    to: 'boujnahamine1@gmail.com'
+                }
+            }
+        }
         
        
 }
