@@ -20,7 +20,9 @@ pipeline {
             steps {
                 script {
                     // Let's clone the source
-                    git 'https://github.com/amineBoujnah/CICD.git';
+                    //git 'https://github.com/amineBoujnah/CICD.git';
+                                    checkout scm
+
                 }
             }
         }
